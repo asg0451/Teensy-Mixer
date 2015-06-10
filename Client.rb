@@ -27,7 +27,16 @@ def update_prog_vol(name, vol)
   streams = inputs_readout
   update_stream_vol(streams[name][0], vol)
 end
+
+def setstty
+  # set the serial output of the teensy properly. Needs to be run whenever it is rebooted or reconnected, but doesn't hurt to run more often than that
+  #  `stty -F /dev/ttyACM0  cs8 115200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts`
+  nil
+end
+
+
 def main
+  setstty
   while true do
     vols = read_serial
     streams = inputs_readout

@@ -1,0 +1,15 @@
+* Description
+  This project is to build a hardware mixing board to control relative volumes of applications running on a computer.
+** Limitations
+   - As currently planned, this project will be limited to linux systems running PulseAudio.
+   - As currently implemented, working with an application that produces more than one volume stream will produce undefined effects. These applications do not expose any identifying information about which streams are which. We are thinking about this.
+** Requirements (will be updated as needed)
+   - PulseAudio
+   - Arduino software + Teensy toolkit (including udev rule)
+   - Ruby version 2.2.0 or greater (probably; older versions have not been tested)
+   - Teensy 3.1 or LC and some implementation of the hardware design.
+
+* Current Status
+  - The hardware does not exist yet, but a prototype implementation with 3 rotary pots seems promising.
+  - One-way (Teensy to computer) serial communication with measured values from pots.
+  - Ruby client program that can listen to this serial output and make changes to running programs' volumes based on it. Tested with a named pipe only so far, but hopefully the device file that the Teensy exposes will behave similarly.
