@@ -20,3 +20,15 @@
   - Arduino code driver (Driver.ino) works for the three pots. Limitations:
     - serial write to Teensy not implemented and is scary, so for now LED is useless unless we hook it up in the Teensy... think more on this.
     - switch status not forwarded along the serial socket because the client is not equipped to deal with it yet.
+
+* Plans
+** For the next version (v0.6)
+  - (order new parts, 6-7 pots for when we kill one)
+  - new circuit
+  - USE THE BETTER WIRES for the love of god
+  - rails made of wire please
+  - mount thing upside down? --> reverse schematic
+  - give everything way more than enough +rope+ wire so that it will all fit
+
+** Future
+   - new enclosure with media keys
