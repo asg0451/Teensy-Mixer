@@ -9,7 +9,7 @@
 require 'pry'
 require 'serialport'
 
-def inputs_readout
+def inputs_readout  # todo: check for failure
   inputs = `pactl list sink-inputs`
   inp_list = (inputs.split /Sink Input/).map do |s|
     s.lstrip.rstrip if s != ''
