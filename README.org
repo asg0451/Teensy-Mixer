@@ -7,9 +7,16 @@
    - PulseAudio
    - Arduino software + Teensy toolkit (including udev rule)
    - Ruby version 2.2.0 or greater (probably; older versions have not been tested)
+     - Gems: =serialport=
    - Teensy 3.1 or LC and some implementation of the hardware design.
 
 * Current Status
-  - The hardware does not exist yet, but a prototype implementation with 3 rotary pots seems promising.
-  - One-way (Teensy to computer) serial communication with measured values from pots.
-  - Ruby client program that can listen to this serial output and make changes to running programs' volumes based on it. Tested with a named pipe only so far, but hopefully the device file that the Teensy exposes will behave similarly.
+  - +The hardware does not exist yet, but a prototype implementation with 3 rotary pots seems promising.+
+  - Ruby client program that can listen to this serial output and make changes to running programs' volumes based on it. +Tested with a named pipe only so far, but hopefully the device file that the Teensy exposes will behave similarly.+
+  - Ruby client (Client.rb) works but lacks the following features:
+    - LED and switches doing anything
+    - robustness to prevent thos weird errors that seem to have stopped once i upped the refresh rate but you never know
+    - persistence of audio streams assigned to pots. gotta make a map in the code or something.
+  - Arduino code driver (Driver.ino) works for the three pots. Limitations:
+    - serial write to Teensy not implemented and is scary, so for now LED is useless unless we hook it up in the Teensy... think more on this.
+    - switch status not forwarded along the serial socket because the client is not equipped to deal with it yet.
