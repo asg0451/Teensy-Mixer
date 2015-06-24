@@ -13,7 +13,7 @@
 * Current Status
   - +The hardware does not exist yet, but a prototype implementation with 3 rotary pots seems promising.+
   - Ruby client program that can listen to this serial output and make changes to running programs' volumes based on it. +Tested with a named pipe only so far, but hopefully the device file that the Teensy exposes will behave similarly.+
-  - Ruby client (Client.rb) works but lacks the following features:
+  - Ruby client (client.rb) works but lacks the following features:
     - LED and switches doing anything
     - robustness to prevent thos weird errors that seem to have stopped once i upped the refresh rate but you never know
     - persistence of audio streams assigned to pots. gotta make a map in the code or something.
