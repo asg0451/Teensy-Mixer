@@ -14,21 +14,26 @@
   - +The hardware does not exist yet, but a prototype implementation with 3 rotary pots seems promising.+
   - Ruby client program that can listen to this serial output and make changes to running programs' volumes based on it. +Tested with a named pipe only so far, but hopefully the device file that the Teensy exposes will behave similarly.+
   - Ruby client (client.rb) works but lacks the following features:
-    - LED and switches doing anything
-    - robustness to prevent thos weird errors that seem to have stopped once i upped the refresh rate but you never know
-    - persistence of audio streams assigned to pots. gotta make a map in the code or something.
-  - Arduino code driver (Driver.ino) works for the three pots. Limitations:
-    - serial write to Teensy not implemented and is scary, so for now LED is useless unless we hook it up in the Teensy... think more on this.
+    - +LED and+ switches doing anything
+      - LED now stays orange throughout operation.
+    - +robustness to prevent those weird errors that seem to have stopped once I upped the refresh rate but you never know+
+      - Definitely gone.
+    - persistence of audio streams assigned to pots, based on program names. gotta make a map in the code or something.
+  - Arduino code driver (=Driver.ino=) works for the three pots. Limitations:
+    - serial write to Teensy not implemented and is scary +so for now LED is useless unless we hook it up in the Teensy... think more on this.+
     - switch status not forwarded along the serial socket because the client is not equipped to deal with it yet.
 
 * Plans
-** For the next version (v0.6)
-  - (order new parts, 6-7 pots for when we kill one)
-  - new circuit
-  - USE THE BETTER WIRES for the love of god
-  - rails made of wire please
-  - mount thing upside down? --> reverse schematic
-  - give everything way more than enough +rope+ wire so that it will all fit
+** For +the next+ version (v2)
+   - (order new parts, 6-7 pots for when we kill one)
+   - new circuit
+   - USE THE BETTER WIRES for the love of god
+   - rails made of wire please
+   - mount thing upside down? --> reverse schematic
+   - give everything way more than enough +rope+ wire so that it will all fit
+
+** For the next version (v3)
+   - most if not all connections on the side of the pcb with metal on (upside down, through hole onto this side)
 
 ** Future
-   - new enclosure with media keys
+   - new enclosure with media keys?
